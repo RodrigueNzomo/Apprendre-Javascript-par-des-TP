@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactions utilisateur : Créer des actions en réponse aux événements (clics, mouvements de
+        souris,soumission de formulaires, etc.).</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Utiliser l'attribut defer dans le <head> pour exécuter le script après le chargement de la page -->
+    <script src="JS/scripts1.js" defer></script> <!-- Chargement du fichier JavaScript -->
+    <link rel="stylesheet" href="CSS/styles.css"> <!-- Lien vers le fichier CSS -->
+</head>
+
+
+<body>
+    <!-- 1. Interaction avec un bouton (clic)
+    Dans cet exemple, un clic sur un bouton change la couleur d'arrière-plan du texte. -->
+    <div>
+        <h1 id="titre">Cliquez pour changer la couleur</h1>
+        <button onclick="changerCouleur()">Changer la couleur</button>
+
+        <!-- Placer le fichier JavaScript avant la fermeture du <body> (recommandé pour que le DOM soit complètement chargé avant l'exécution du script) -->
+    </div>
+    <!-- 2. Détection du mouvement de la souris (mousemove)
+    Ici, le mouvement de la souris sur un élément HTML met à jour en temps réel les coordonnées de la souris. -->
+    <div>
+        <p>Déplacez votre souris dans la zone ci-dessous :</p>
+        <div onmousemove="afficherCoordonnees(event)" class="zone-souris">
+            <p id="position"></p>
+        </div>
+    </div>
+    <!-- 3. Soumission de formulaire
+Cet exemple montre comment gérer la soumission d'un formulaire en affichant une alerte lorsque le formulaire est soumis. -->
+    <div>
+        <form onsubmit="return soumettreFormulaire()">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom">
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+    <!-- 4. Double clic (dblclick)
+Dans cet exemple, un double-clic sur un paragraphe change sa couleur. -->
+    <div>
+        <p ondblclick="changerCouleurDoubleClick()" id="paragraphe">Double-cliquez ici pour changer la couleur du
+            texte:JavaScript peut être exécuté aussi bien côté client (dans le navigateur) que côté serveur (sur un
+            serveur distant avec
+            Node.js, par exemple). Ces deux contextes offrent des rôles différents au langage.
+        </p>
+
+    </div>
+    <!-- 5. Changement de sélection (change)
+Cet exemple montre comment capturer l'événement change d'un élément select pour mettre à jour le texte affiché en
+fonction de l'option choisie. -->
+    <div>
+        <label for="menu">Choisissez une option :</label>
+        <select id="menu" onchange="afficherChoix()">
+            <option value="">Sélectionnez une option</option> <!-- Option par défaut vide -->
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+
+        <p id="affichageChoix"></p>
+
+    </div>
+    <!-- 6. Survol avec la souris (mouseover / mouseout)
+Cet exemple change l'arrière-plan d'un élément lorsque la souris passe dessus et revient à sa couleur d'origine lorsque
+la souris quitte l'élément. -->
+    <div>
+        <div onmouseover="changerFond()" onmouseout="retablirFond()" id="zone">
+            Passez la souris ici pour changer la couleur d'arrière-plan.
+        </div>
+    </div>
+    <!-- 7. Appui sur une touche (keydown)
+    Cet exemple écoute l'événement keydown et affiche la touche appuyée dans un paragraphe. -->
+    <div>
+        <p>Appuyez sur une touche du clavier :</p>
+        <p id="toucheAppuyee"></p>
+        <!-- <h1>Press Any Key</h1>
+        <p id="output1">You pressed: </p>
+        <h1>Press Any Key</h1>
+        <p id="output2">You pressed: </p>
+        <h1>Press Any Key</h1>
+        <p id="output3">You pressed: </p> -->
+
+        <script>
+            document.addEventListener('keydown', function (event) {
+                document.getElementById("toucheAppuyee").innerText = "Touche appuyée : " + event.key;
+            });
+        </script>
+    </div>
+    <!-- 8. Focus sur un champ de texte (focus / blur)
+Cet exemple met en surbrillance un champ de texte lorsque l'utilisateur y entre (focus) et le remet à son état normal
+lorsqu'il en sort (blur). -->
+    <div>
+        <label for="champTexte1">Entrez du texte :</label>
+        <input type="text" id="champTexte1" onfocus="mettreEnSurbrillance()" onblur="retirerSurbrillance()">
+
+    </div>
+
+    <div>
+        <label for="champTexte2">Entrez du texte :</label>
+        <input type="text" id="champTexte2" onfocus="mettreEnSurbrillance()" onblur="retirerSurbrillance()">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

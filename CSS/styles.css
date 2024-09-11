@@ -1,0 +1,90 @@
+/* Style pour les boutons personnalisés */
+.btn-custom {
+    margin-right: 10px;
+}
+
+/* Style pour le conteneur principal */
+.container {
+    margin-top: 20px;
+}
+
+/* Style pour les éléments de paragraphe */
+.paragraphe {
+    margin: 5px 0;
+}
+
+
+
+
+
+/* Styles généraux pour la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Conteneur pour aligner le texte et le bouton sur une seule ligne */
+.conteneur {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+/* Styles pour les titres */
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-right: 20px; /* Espacement entre le texte et le bouton */
+}
+
+/* Styles pour les boutons */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet au survol des boutons */
+button:hover {
+    background-color: #0056b3;
+}
+/* Style global pour la page */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333; */
+/* } */
+
+/* Style pour l'élément de position de défilement */
+#scrollPosition {
+    position: relative; /* Reste visible lors du défilement */
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Modifier la couleur de fond lorsqu'on défile la page */
+body.scrolled #scrollPosition {
+    background-color: #007bff;
+}
+.zone-souris {
+    border: 1px solid black;
+    height: 100px;
+}
